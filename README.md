@@ -1,42 +1,41 @@
-# CSR Automation Script
+A Python automation tool to generate RSA keys and Certificate Signing Requests (CSRs) in bulk for Secure Network Analytics (SNA) appliances, legacy network gear, and any technology requiring robust certificate management.
 
-This script automates the generation of RSA keys and Certificate Signing Requests (CSRs) for Cisco devices using OpenSSL.
+Why this tool?
+Manual certificate management is a bottleneck. This solution is engineered for:
 
-## Project Structure
-- `Function_test.py`: The main automation script.
-- `CommonName.cnf`: OpenSSL configuration template.
-- `CSR_infofile.csv`: Input file containing device details.
+Air-gapped Environments: Securely generate credentials without external connectivity.
 
-## Getting Started
-1. Ensure you have OpenSSL installed.
-2. Edit `CSR_infofile.csv` with your required metadata.
-3. Run the script: `python3 Function_test.py`
+Legacy & Modern Appliances: Seamlessly handle devices lacking modern APIs, including SNA versions below 7.6, and any platform using standard security certificates.
 
-## Security
-- Private keys (`.key`) and CSRs (`.csr`) are generated in local directories and are excluded from version control via `.gitignore`# CSR Automation Script
+Scalability: Transition from manual, error-prone OpenSSL commands to a standardized, batch-processed workflow.
 
-This script automates the generation of RSA keys and Certificate Signing Requests (CSRs) for secure network appliances (like Cisco DNA Center/SNA) and legacy infrastructure.
+Business Value
+Significant Time Savings: Reduce deployment windows from hours to seconds by automating hundreds of CSRs in a single execution.
 
-## Why this tool?
-In environments with dozens or hundreds of appliances, manual certificate management is a bottleneck. This solution is specifically engineered for:
-- **Air-gapped Environments:** Securely generate credentials without external connectivity.
-- **Legacy Appliances:** Seamlessly handle devices lacking modern APIs or automated enrollment protocols (like SCEP/EST).
-- **Scalability:** Transition from manual, error-prone OpenSSL commands to a standardized, batch-processed workflow.
+Operational Consistency: Eliminate human error in certificate metadata, ensuring compliance across diverse infrastructure.
 
-## Business Value
-- **Significant Time Savings:** Reduce deployment windows from hours to seconds by automating the generation of hundreds of CSRs in a single execution.
-- **Operational Consistency:** Eliminate "human error" in certificate metadata, ensuring compliance across your entire infrastructure.
-- **Enhanced Security:** Standardize key length (4096-bit) and security parameters across the enterprise.
+Enhanced Security: Standardize key length (4096-bit) and security parameters across the enterprise.
 
-## Project Structure
-- `Function_test.py`: The main automation script.
-- `CommonName.cnf`: OpenSSL configuration template.
-- `CSR_infofile.csv`: Input file containing device details.
+Project Structure
+Function_test.py: The main automation script.
 
-## Getting Started
-1. Ensure OpenSSL is installed.
-2. Edit `CSR_infofile.csv` with your device details.
-3. Run the script: `python3 Function_test.py`
+CommonName.cnf: OpenSSL configuration template.
 
-## Security
-Private keys (`.key`) and CSRs (`.csr`) are automatically isolated and excluded from version control via `.gitignore`.
+CSR_infofile.csv: Input file containing device details.
+
+Getting Started
+Ensure OpenSSL is installed and accessible in your system PATH.
+
+Ensure Function_test.py, CommonName.cnf, and CSR_infofile.csv are in the same directory.
+
+Edit CSR_infofile.csv with your device details.
+
+Run the script:
+
+Bash
+python3 Function_test.py
+Security
+Private keys (.key) and CSRs (.csr) are automatically isolated and excluded from version control via .gitignore to prevent sensitive data exposure.
+
+Contributing
+Contributions are welcome. Please open an issue or submit a pull request for any improvements or bug fixes.
